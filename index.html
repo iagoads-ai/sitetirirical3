@@ -22,10 +22,13 @@
     @keyframes floatPulse { 0% { box-shadow: 0 6px 24px rgba(37,211,102,0.5),0 0 0 0 rgba(37,211,102,0.5); } 70% { box-shadow: 0 6px 24px rgba(37,211,102,0.3),0 0 0 14px rgba(37,211,102,0); } 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5),0 0 0 0 rgba(37,211,102,0); } }
     @keyframes heroBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
     .mobile-menu-btn { display: none; }
-    @media (max-width: 860px) {
+    @media (max-width: 980px) {
       .desktop-nav { display: none !important; }
       .mobile-menu-btn { display: flex !important; }
     }
+    .nav-more { position: relative; }
+    .nav-more-panel { display:none; position:absolute; top:100%; right:0; background:#005C8F; border-radius:10px; padding:6px; margin-top:8px; min-width:190px; box-shadow:0 14px 30px rgba(0,0,0,0.3); z-index:70; }
+    .nav-more:hover .nav-more-panel { display:block; }
   </style>
 </helmet>
 
@@ -33,27 +36,35 @@
 
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:50;background:#007BBF;border-bottom:3px solid #E2001A">
-    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 24px;flex-wrap:wrap">
+    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 24px;flex-wrap:wrap">
       <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-        <div style="width:38px;height:38px;border-radius:8px;background:#E2001A;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;color:#fff">T</span>
-        </div>
+        <img src="assets/bosch-car-service-logo.png" alt="Bosch Car Service" style="height:40px;width:auto;flex-shrink:0;border-radius:4px">
         <div style="line-height:1.1">
           <div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;color:#fff">TIRIRICAL</div>
-          <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:10px;color:rgba(255,255,255,0.72);letter-spacing:1.4px">BOSCH CAR SERVICE</div>
+          <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:10px;color:rgba(255,255,255,0.72);letter-spacing:1.4px">AUTO PEÇAS E SERVIÇOS</div>
         </div>
       </a>
-      <nav class="desktop-nav" style="display:flex;align-items:center;gap:2px;flex-wrap:wrap">
-        <a href="index.html" style="font-size:13.5px;font-weight:700;color:#fff;padding:8px 12px;border-radius:7px;background:rgba(255,255,255,0.18)">Início</a>
-        <a href="servicos.html" style="font-size:13.5px;font-weight:600;color:rgba(255,255,255,0.85);padding:8px 12px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Serviços</a>
-        <a href="revisao.html" style="font-size:13.5px;font-weight:600;color:rgba(255,255,255,0.85);padding:8px 12px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Revisão Preventiva</a>
-        <a href="sobre.html" style="font-size:13.5px;font-weight:600;color:rgba(255,255,255,0.85);padding:8px 12px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Sobre</a>
-        <a href="contato.html" style="font-size:13.5px;font-weight:600;color:rgba(255,255,255,0.85);padding:8px 12px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Contato</a>
+      <nav class="desktop-nav" style="display:flex;align-items:center;gap:0px">
+        <a href="index.html" style="font-size:13px;font-weight:700;color:#fff;padding:6px 8px;border-radius:7px;background:rgba(255,255,255,0.18)">Início</a>
+        <a href="servicos.html" style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);padding:6px 8px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Serviços</a>
+        <a href="revisao.html" style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);padding:6px 8px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Revisão Preventiva</a>
+        <a href="sobre.html" style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);padding:6px 8px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Sobre</a>
+        <a href="contato.html" style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);padding:6px 8px;border-radius:7px" style-hover="background:rgba(255,255,255,0.15)">Contato</a>
+        <div class="nav-more">
+          <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);padding:6px 8px;border-radius:7px;display:flex;align-items:center;gap:4px;cursor:pointer;user-select:none">Mais <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+          <div class="nav-more-panel">
+          <a href="pneus.html" style="display:block;font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.85);padding:9px 12px;border-radius:6px;white-space:nowrap" style-hover="background:rgba(255,255,255,0.15)">Pneus</a>
+          <a href="liquimoly.html" style="display:block;font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.85);padding:9px 12px;border-radius:6px;white-space:nowrap" style-hover="background:rgba(255,255,255,0.15)">Liqui Moly</a>
+          <a href="dicas.html" style="display:block;font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.85);padding:9px 12px;border-radius:6px;white-space:nowrap" style-hover="background:rgba(255,255,255,0.15)">Dicas</a>
+          <a href="faq.html" style="display:block;font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.85);padding:9px 12px;border-radius:6px;white-space:nowrap" style-hover="background:rgba(255,255,255,0.15)">FAQ</a>
+          <a href="trabalhe-conosco.html" style="display:block;font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.85);padding:9px 12px;border-radius:6px;white-space:nowrap" style-hover="background:rgba(255,255,255,0.15)">Trabalhe Conosco</a>
+          </div>
+        </div>
       </nav>
       <button onClick="{{ toggleMenu }}" class="mobile-menu-btn" style="width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,0.15);align-items:center;justify-content:center;border:none;cursor:pointer;flex-shrink:0">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="2" stroke-linecap="round"></path></svg>
       </button>
-      <a href="{{ wa }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-weight:700;font-size:14px;padding:11px 18px;border-radius:8px;white-space:nowrap;flex-shrink:0;text-decoration:none" style-hover="background:#1DA851">
+      <a href="{{ wa }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-weight:700;font-size:13.5px;padding:10px 14px;border-radius:8px;white-space:nowrap;flex-shrink:0;text-decoration:none" style-hover="background:#1DA851">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
         Agendar agora
       </a>
@@ -67,33 +78,45 @@
       <a href="revisao.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">Revisão Preventiva</a>
       <a href="sobre.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">Sobre</a>
       <a href="contato.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">Contato</a>
+      <a href="pneus.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">Pneus</a>
+      <a href="liquimoly.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">Liqui Moly</a>
+      <a href="dicas.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">Dicas</a>
+      <a href="faq.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">FAQ</a>
+      <a href="trabalhe-conosco.html" style="font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.9);padding:10px 8px;border-radius:6px">Trabalhe Conosco</a>
     </div>
   </sc-if>
 
   <!-- HERO -->
   <section style="background:#007BBF;padding:72px 24px 64px;position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(226,0,26,0.22),transparent 55%)"></div>
-    <div style="max-width:860px;margin:0 auto;text-align:center;position:relative">
+    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:48px;position:relative;flex-wrap:wrap">
+      <div style="flex:1 1 460px;min-width:300px;text-align:left">
       <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:7px 16px;border-radius:100px;margin-bottom:24px">
         <span style="width:7px;height:7px;border-radius:50%;background:#25D366;animation:heroBounce 2s infinite"></span>
-        <span style="font-size:12.5px;font-weight:700;color:#fff;letter-spacing:0.5px">DIAGNÓSTICO GRATUITO · BOSCH CAR SERVICE · SÃO LUÍS</span>
+        <span style="font-size:12.5px;font-weight:700;color:#fff;letter-spacing:0.5px">PADRÃO INTERNACIONAL BOSCH · SÃO LUÍS</span>
       </div>
-      <h1 style="font-size:clamp(36px,5.5vw,60px);font-weight:900;color:#fff;line-height:1.07;letter-spacing:-0.5px;text-wrap:pretty">
+      <h1 style="font-size:clamp(34px,4.6vw,54px);font-weight:900;color:#fff;line-height:1.07;letter-spacing:-0.5px;text-wrap:pretty">
         Não Espere Quebrar Pra Descobrir o Problema
       </h1>
-      <p style="margin-top:20px;font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,0.88);line-height:1.55;max-width:680px;margin-left:auto;margin-right:auto">
-        Diagnóstico eletrônico de precisão, revisões completas e injeção eletrônica com a tecnologia Bosch. Agende seu orçamento grátis pelo WhatsApp e resolva antes que vire problema grande.
+      <p style="margin-top:20px;font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,0.88);line-height:1.55;max-width:520px">
+        Diagnóstico eletrônico de precisão, revisões completas e injeção eletrônica com a tecnologia Bosch. Agende pelo WhatsApp e resolva antes que vire problema grande.
       </p>
-      <div style="display:flex;gap:14px;margin-top:32px;justify-content:center;flex-wrap:wrap">
+      <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap">
         <a href="{{ wa }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:700;font-size:17px;padding:17px 30px;border-radius:10px;text-decoration:none" style-hover="background:#1DA851">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
-          Agendar Diagnóstico Grátis
+          Agendar Avaliação
         </a>
         <a href="servicos.html" style="display:flex;align-items:center;gap:8px;background:transparent;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-weight:600;font-size:17px;padding:17px 26px;border-radius:10px;text-decoration:none" style-hover="border-color:#fff">
           Ver todos os serviços
         </a>
       </div>
       <p style="margin-top:16px;font-size:13.5px;color:rgba(255,255,255,0.65)">Sem compromisso &nbsp;·&nbsp; Resposta em minutos no WhatsApp &nbsp;·&nbsp; Orçamento transparente, sem letra miúda</p>
+      </div>
+      <div style="flex:1 1 420px;min-width:300px">
+        <div style="width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15)">
+          <img src="assets/hero-bosch.jpg" alt="Equipe Bosch Service da Tirirical" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -124,15 +147,22 @@
 
   <!-- PROPOSTA DE VALOR -->
   <section style="background:#F4F6F8;padding:80px 24px">
-    <div style="max-width:780px;margin:0 auto;text-align:center">
-      <div style="font-size:12.5px;font-weight:700;color:#E2001A;letter-spacing:1.5px;margin-bottom:12px">ENTENDA O RISCO</div>
-      <h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:800;color:#14171A;text-wrap:pretty">Todo carro dá um sinal antes de parar de vez.</h2>
-      <div style="display:flex;flex-direction:column;gap:16px;margin-top:28px;text-align:left">
-        <p style="font-size:17px;color:#4A5057;line-height:1.65">Um barulho diferente. Uma luz acesa no painel. Um consumo de combustível que só aumenta.</p>
-        <p style="font-size:17px;color:#4A5057;line-height:1.65">A maioria dos motoristas ignora — até o dia em que o carro simplesmente não liga mais. Aí o conserto que custaria algumas centenas de reais vira um orçamento de milhares.</p>
-        <p style="font-size:17px;color:#4A5057;line-height:1.65">Na Bosch Car Service Tirirical, usamos a mesma tecnologia de diagnóstico das concessionárias pra encontrar o problema antes dele te encontrar. Com transparência total: você vê o que precisa (e o que não precisa) ser feito.</p>
-        <div style="background:#fff;border-left:4px solid #E2001A;padding:18px 24px;border-radius:0 10px 10px 0;margin-top:4px">
-          <p style="font-size:17px;font-weight:700;color:#14171A">Prevenção custa menos que conserto de emergência. Sempre.</p>
+    <div style="max-width:1100px;margin:0 auto;display:flex;gap:48px;align-items:center;flex-wrap:wrap">
+      <div style="flex:1 1 460px;min-width:300px">
+        <div style="font-size:12.5px;font-weight:700;color:#E2001A;letter-spacing:1.5px;margin-bottom:12px">ENTENDA O RISCO</div>
+        <h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:800;color:#14171A;text-wrap:pretty">Todo carro dá um sinal antes de parar de vez.</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:28px;text-align:left">
+          <p style="font-size:17px;color:#4A5057;line-height:1.65">Um barulho diferente. Uma luz acesa no painel. Um consumo de combustível que só aumenta.</p>
+          <p style="font-size:17px;color:#4A5057;line-height:1.65">A maioria dos motoristas ignora — até o dia em que o carro simplesmente não liga mais. Aí o conserto que custaria algumas centenas de reais vira um orçamento de milhares.</p>
+          <p style="font-size:17px;color:#4A5057;line-height:1.65">Na Bosch Car Service Tirirical, usamos a mesma tecnologia de diagnóstico das concessionárias pra encontrar o problema antes dele te encontrar. Com transparência total: você vê o que precisa (e o que não precisa) ser feito.</p>
+          <div style="background:#fff;border-left:4px solid #E2001A;padding:18px 24px;border-radius:0 10px 10px 0;margin-top:4px">
+            <p style="font-size:17px;font-weight:700;color:#14171A">Prevenção custa menos que conserto de emergência. Sempre.</p>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1 1 420px;min-width:300px">
+        <div style="width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;box-shadow:0 20px 40px -16px rgba(0,0,0,0.18);border:1px solid #E5E8EB">
+          <img src="assets/fachada.jpg" alt="Fachada da Tirirical Bosch Car Service" style="width:100%;height:100%;object-fit:cover;display:block">
         </div>
       </div>
     </div>
@@ -190,11 +220,18 @@
   <!-- SOLUÇÃO -->
   <section style="background:#007BBF;padding:80px 24px">
     <div style="max-width:1100px;margin:0 auto">
-      <div style="max-width:740px;margin:0 auto;text-align:center;margin-bottom:48px">
+      <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;margin-bottom:48px">
+      <div style="flex:1 1 460px;min-width:300px">
         <div style="font-size:12.5px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1.5px;margin-bottom:12px">NOSSA SOLUÇÃO</div>
         <h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:800;color:#fff;text-wrap:pretty">A tecnologia Bosch que sua concessionária usa, mais perto de você</h2>
         <p style="margin-top:16px;font-size:17px;color:rgba(255,255,255,0.85);line-height:1.6">Usamos tecnologia Bosch pra encontrar a causa real do problema, não só o sintoma. Isso significa menos retrabalho, menos "voltou com o mesmo problema" e menos gasto desnecessário.</p>
         <p style="margin-top:12px;font-size:17px;color:rgba(255,255,255,0.85);line-height:1.6">Você acompanha o diagnóstico, entende o que está sendo feito e só aprova o que realmente precisa ser reparado. Sem pressão, sem venda casada.</p>
+      </div>
+      <div style="flex:1 1 380px;min-width:280px">
+        <div style="width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.2)">
+          <img src="assets/equipe-bosch.avif" alt="Equipe técnica Bosch da Tirirical trabalhando em um veículo" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
         <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:22px 20px;display:flex;gap:14px;align-items:flex-start">
@@ -379,8 +416,8 @@
         </div>
         <div style="margin-top:28px;padding-top:28px;border-top:1px solid #E5E8EB;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
           <div>
-            <div style="font-size:13px;color:#9AA0A6;font-weight:500">Diagnóstico inicial</div>
-            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:32px;color:#25D366">GRATUITO</div>
+            <div style="font-size:13px;color:#9AA0A6;font-weight:500">Avaliação técnica</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:26px;color:#007BBF">Sob consulta</div>
             <div style="font-size:13px;color:#9AA0A6;margin-top:2px">Formas de pagamento: confirmar com a equipe</div>
           </div>
           <a href="{{ wa }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:700;font-size:16px;padding:16px 26px;border-radius:10px;text-decoration:none;flex-shrink:0" style-hover="background:#1DA851">
@@ -402,7 +439,7 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
         <div style="background:#F4F6F8;border-radius:14px;padding:28px;border-left:4px solid #007BBF">
           <h3 style="font-size:15.5px;font-weight:700;color:#14171A;margin-bottom:10px">"Mas oficina de marca deve ser mais cara que autônomo..."</h3>
-          <p style="font-size:14.5px;color:#6B7177;line-height:1.55">Entendemos a preocupação. Por isso nosso diagnóstico é gratuito e o orçamento é sempre transparente — você só paga pelo que realmente precisa, sem serviço empurrado.</p>
+          <p style="font-size:14.5px;color:#6B7177;line-height:1.55">Entendemos a preocupação. Por isso o orçamento é sempre transparente — você só paga pelo que realmente precisa, sem serviço empurrado.</p>
         </div>
         <div style="background:#F4F6F8;border-radius:14px;padding:28px;border-left:4px solid #007BBF">
           <h3 style="font-size:15.5px;font-weight:700;color:#14171A;margin-bottom:10px">"Tenho medo de fazerem um serviço que eu não precisava..."</h3>
@@ -418,7 +455,7 @@
         </div>
         <div style="background:#F4F6F8;border-radius:14px;padding:28px;border-left:4px solid #007BBF">
           <h3 style="font-size:15.5px;font-weight:700;color:#14171A;margin-bottom:10px">"Já uso o mesmo mecânico há anos, tenho receio de trocar..."</h3>
-          <p style="font-size:14.5px;color:#6B7177;line-height:1.55">Não precisa trocar de vez. Comece com um diagnóstico gratuito e compare o que descobrimos. A decisão é sua.</p>
+          <p style="font-size:14.5px;color:#6B7177;line-height:1.55">Não precisa trocar de vez. Peça uma avaliação e compare o que encontramos. A decisão é sua.</p>
         </div>
       </div>
     </div>
@@ -464,12 +501,12 @@
   <section style="background:#E2001A;padding:72px 24px">
     <div style="max-width:800px;margin:0 auto;text-align:center">
       <h2 style="font-size:clamp(26px,3.4vw,40px);font-weight:900;color:#fff;text-wrap:pretty;line-height:1.1">Seu carro está te dando sinais agora. A pergunta é: você vai esperar ele parar de vez, ou vai resolver antes?</h2>
-      <p style="margin-top:16px;font-size:17px;color:rgba(255,255,255,0.9);line-height:1.55">Um diagnóstico gratuito hoje pode evitar um problema de milhares amanhã.</p>
+      <p style="margin-top:16px;font-size:17px;color:rgba(255,255,255,0.9);line-height:1.55">Uma avaliação hoje pode evitar um problema de milhares amanhã.</p>
       <a href="{{ wa }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#E2001A;font-weight:700;font-size:17px;padding:17px 30px;border-radius:10px;margin-top:28px;text-decoration:none" style-hover="background:#FFF0F0">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
-        Agendar Meu Diagnóstico Grátis Agora
+        Agendar Minha Avaliação Agora
       </a>
-      <p style="margin-top:28px;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;max-width:600px;margin-left:auto;margin-right:auto"><strong>PS:</strong> O maior custo em manutenção automotiva não é o serviço — é esperar demais pra fazer. Um diagnóstico Bosch gratuito hoje pode ser a diferença entre um reparo simples e um carro parado na oficina por dias.</p>
+      <p style="margin-top:28px;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;max-width:600px;margin-left:auto;margin-right:auto"><strong>PS:</strong> O maior custo em manutenção automotiva não é o serviço — é esperar demais pra fazer. Uma avaliação Bosch hoje pode ser a diferença entre um reparo simples e um carro parado na oficina por dias.</p>
     </div>
   </section>
 
@@ -479,8 +516,8 @@
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.18)">
         <div>
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-            <div style="width:34px;height:34px;border-radius:7px;background:#E2001A;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:16px;color:#fff">T</span></div>
-            <div><div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;color:#fff">TIRIRICAL</div><div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:9.5px;color:rgba(255,255,255,0.65);letter-spacing:1.3px">BOSCH CAR SERVICE</div></div>
+            <img src="assets/bosch-car-service-logo.png" alt="Bosch Car Service" style="height:36px;width:auto;flex-shrink:0;border-radius:4px">
+            <div><div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;color:#fff">TIRIRICAL</div><div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:9.5px;color:rgba(255,255,255,0.65);letter-spacing:1.3px">AUTO PEÇAS E SERVIÇOS</div></div>
           </div>
           <p style="font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.6">Oficina credenciada Bosch Car Service<br>São Luís, Maranhão</p>
         </div>
@@ -491,15 +528,20 @@
           <a href="revisao.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">Revisão Preventiva</a>
           <a href="sobre.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">Sobre</a>
           <a href="contato.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">Contato</a>
+          <a href="pneus.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">Pneus</a>
+          <a href="liquimoly.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">Liqui Moly</a>
+          <a href="dicas.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">Dicas</a>
+          <a href="faq.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">FAQ</a>
+          <a href="trabalhe-conosco.html" style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;text-decoration:none" style-hover="color:#fff">Trabalhe Conosco</a>
         </nav>
         <div style="display:flex;flex-direction:column;gap:10px">
           <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.45);letter-spacing:1.2px;margin-bottom:2px">CONTATO</div>
-          <div style="font-size:14px;color:rgba(255,255,255,0.82)">(98) 9 8225-6595</div>
-          <div style="font-size:14px;color:rgba(255,255,255,0.82);line-height:1.5">Av. Guajajaras, 03A – quadra 91<br>Tirirical, São Luís – MA</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.65)">Seg–Sex 8h–18h · Sáb 8h–12h</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.82)">(98) 3225-6595</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.82);line-height:1.5">Av. Guajajaras, 09A, quadra 91<br>Jardim São Cristóvão, São Luís – MA</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.65)">Seg–Sex 08:00–17:30 · Sáb 08:00–12:00</div>
         </div>
       </div>
-      <p style="text-align:center;font-size:12px;color:rgba(255,255,255,0.42);margin-top:22px;line-height:1.7">Ao entrar em contato, você concorda com o tratamento dos seus dados conforme a LGPD. &nbsp;·&nbsp; © 2026 Tirirical Bosch Car Service · São Luís, MA</p>
+      <p style="text-align:center;font-size:12px;color:rgba(255,255,255,0.42);margin-top:22px;line-height:1.7">CNPJ 03.276.081/0003-07 &nbsp;·&nbsp; Ao entrar em contato, você concorda com o tratamento dos seus dados conforme a LGPD. &nbsp;·&nbsp; © 2026 Tirirical Bosch Car Service · São Luís, MA</p>
     </div>
   </footer>
 
@@ -524,7 +566,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const wa = 'https://wa.me/5598982256595?text=' + encodeURIComponent('Vim do site. Gostaria de agendar um diagnóstico gratuito.');
+    const wa = 'https://wa.me/559832256595?text=' + encodeURIComponent('Vim do site. Gostaria de agendar uma avaliação.');
     const faqs = [
       { q: 'Quanto tempo leva o diagnóstico?', a: 'Normalmente conseguimos te dar um retorno no mesmo dia. Ao agendar pelo WhatsApp, já te passamos uma previsão antes de você trazer o carro.' },
       { q: 'Vocês atendem qualquer marca e modelo?', a: 'Trabalhamos com tecnologia Bosch, compatível com a grande maioria das marcas e modelos. Confirme seu modelo pelo WhatsApp.' },
